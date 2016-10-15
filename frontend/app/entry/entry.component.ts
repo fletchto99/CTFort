@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
     styleUrls: ['entry.component.css']
 })
 
-export class EntryComponent { }
+export class EntryComponent implements OnInit {
+    ngOnInit() {
+        $('#entry-card .tabs').tabs();
+    }
+}
