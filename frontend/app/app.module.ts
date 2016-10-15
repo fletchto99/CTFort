@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
+import { LandingComponent } from './landing/landing.component';
 import { EntryComponent } from './entry/entry.component';
 import { LoginComponent } from './entry/login.component';
 import { RegisterComponent } from './entry/register.component';
@@ -14,11 +15,12 @@ import { AppRoutingModule } from './app-routing.module';
         AppRoutingModule
     ],
     declarations: [
+        LandingComponent,
         EntryComponent,
         LoginComponent,
         RegisterComponent
     ],
-    bootstrap: [ EntryComponent ]
+    bootstrap: [ LandingComponent ]
 })
 
 export class AppModule { }
