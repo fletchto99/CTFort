@@ -1,10 +1,3 @@
-CREATE TABLE Users(
-	User_ID SERIAL NOT NULL PRIMARY KEY,
-	Username VARCHAR(32) NOT NULL,
-	Password VARCHAR(60) NOT NULL,
-	Email VARCHAR(60) NOT NULL
-);
-
 CREATE TABLE "session" (
     "sid" varchar NOT NULL COLLATE "default",
     "sess" json NOT NULL,
