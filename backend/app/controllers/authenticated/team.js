@@ -16,7 +16,7 @@ router.put('', (request, response) =>
         })).catch(error => response.jsonError(error, 500)));
 
 router.get('/:teamid', (request, response) =>
-    team.fetchInfo(request.params.teamid, request.body, request.session.user_id)
+    team.fetchInfo(request.params.teamid, request.session.user_id)
         .then(results => response.jsonResponse({
             team: results
         })).catch(error => response.jsonError(error, 500)));
