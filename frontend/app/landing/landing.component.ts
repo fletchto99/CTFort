@@ -7,4 +7,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['landing.component.css']
 })
 
-export class LandingComponent {}
+export class LandingComponent implements OnInit {
+	ngOnInit() {
+        $('.parallax').parallax();
+    }
+}
