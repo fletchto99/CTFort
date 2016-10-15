@@ -56,18 +56,18 @@ module.exports = {
             database.query({
                 text: "SELECT * FROM Users WHERE Username = $1",
                 values: [params.username]
-            }).then((results) => {
+            }).then(results => {
 
-                if (results.rows.length < 1) {
+                if (results.length < 1) {
                     reject({
                         error: 'Invalid username or password!'
                     });
                     return;
                 }
 
-                if (security.verifyPassword(params.password, results.rows[0].password)) {
-                    delete results.rows[0].password;
-                    resolve(results.rows[0]);
+                if (security.verifyPassword(params.password, results[0].password)) {
+                    delete results[0].password;
+                    resolve(results[0]);
                 } else {
                     reject({
                         error: 'Invalid username or password!'

@@ -9,7 +9,7 @@ module.exports = {
     connect(connection, schema) {
         return new Promise((resolve, reject) => {
             state.connection = new postgres.Client(connection);
-            state.connection.connect((error) => {
+            state.connection.connect(error => {
                 if (error) {
                     console.log(`Error connecting to database: ${error}`);
                     reject(error)
