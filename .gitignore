@@ -3,3 +3,11 @@
 /app/**/*.js
 /app/**/*.js.map
 /typings/
+/frontend/node_modules/
+/frontend/app/**/*.js
+/frontend/app/**/*.js.map
+/frontend/typings/
+backend/node_modules
+session.json
+database.json
+app.json
