@@ -1,5 +1,5 @@
 .idea
-/frontend/node_modules/
-/frontend/app/**/*.js
-/frontend/app/**/*.js.map
-/frontend/typings/
+/node_modules/
+/app/**/*.js
+/app/**/*.js.map
+/typings/
