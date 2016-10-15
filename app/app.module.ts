@@ -6,8 +6,13 @@ import { EntryComponent } from './entry/entry.component';
 import { LoginComponent } from './entry/login.component';
 import { RegisterComponent } from './entry/register.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
-    imports: [ BrowserModule ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule
+    ],
     declarations: [
         EntryComponent,
         LoginComponent,
