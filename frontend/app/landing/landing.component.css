@@ -7,7 +7,7 @@
 }
 
 .logo {
-	padding: 2.5%;
+	padding-top: 5%;
 }
 
 /*.header-box {
@@ -25,19 +25,22 @@
 	margin-right: 10%;
 }
 
+.parallax-container {
+	height: 550px;
+}
+
 #bg {
-  background-image: url('/resources/castle_flags.png');
-  background-position: center top;
-  background-size: 1080px auto;
-  padding: 70px 90px 120px 90px;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 30px 90px 0px 90px;
 }
 
 #search {
-  padding: 20px;
-  background: rgb(34,34,34); /* for IE */
-  background: rgba(34,34,34,0.75);
+	padding: 20px;
+	background: rgb(34,34,34); /* for IE */
+	background: rgba(34,34,34,0.75);
 }
 
-#search h2, #search h5, #search h5 a { text-align: center; color: #fefefe; font-weight: normal; }
-#search h2 { margin-bottom: 50px }
-#search h5 { margin-top: 70px }
+#search h3, #search h5, #search h5 a { text-align: center; color: #fefefe; font-weight: normal; }
+#search h3 { margin-bottom: 20px }
+#search h5 { margin-top: 30px }
