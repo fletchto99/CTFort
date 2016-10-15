@@ -21,16 +21,17 @@ router.get('/:teamid', (request, response) =>
             team: results
         })).catch(error => response.jsonError(error, 500)));
 
-router.put('/:teamid', (request, response) =>
-    team.addMember(request.params.teamid, request.body, request.session.user_id)
+router.put('/join', (request, response) =>
+    team.joinTeam(request.body, request.session.user_id)
         .then(results => response.jsonResponse({
             message: "Member added to team successfully!"
         })).catch(error => response.jsonError(error, 500)));
 
-router.post('/:teamid', (request, response) =>
-    team.update(request.params.teamid, request.body, request.session.user_id)
-        .then(results => response.jsonResponse({
-            message: "Team updated successfully!"
-        })).catch(error => response.jsonError(error, 500)));
+//TODO: Update
+// router.post('/:teamid', (request, response) =>
+//     team.update(request.params.teamid, request.body, request.session.user_id)
+//         .then(results => response.jsonResponse({
+//             message: "Team updated successfully!"
+//         })).catch(error => response.jsonError(error, 500)));
 
 module.exports = router;

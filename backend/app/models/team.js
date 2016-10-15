@@ -65,11 +65,11 @@ module.exports = {
                             return genCode(Math.random().toString(36).substring(15));
                         } else {
                             database.query({
-                                text: "INSERT INTO Teams(Team_Name) VALUES ($1) returning Team_ID ",
-                                values: [user_id]
+                                text: "INSERT INTO Teams(Team_Name, Invite_Code) VALUES ($1, $2) returning Team_ID ",
+                                values: [user_id, code]
                             }).then(results => database.query({
                                 text: "INSERT INTO Teams_Users(Team_ID, User_ID, Role_ID, Status, Invite_Code) VALUES ($1, $2, 1, 1, $3) returning Teams_Users_ID ",
-                                values: [results[0], user_id, code]
+                                values: [results[0], user_id]
                             })).then(results =>
                                 resolve(results)
                             ).catch(error => reject({
@@ -111,6 +111,7 @@ module.exports = {
                             error: "You are not authorized to access this team"
                         });
                     } else {
+
                         database.query({
                             text: "SELECT * FROM Teams WHERE Team_ID = $1",
                             values: [team_id]
@@ -123,6 +124,40 @@ module.exports = {
                     }
 
                 }).catch(error => reject(error));
+        });
+    },
+
+    joinTeam(params, user_id) {
+        return new Promise((resolve, reject) => {
+            let errors = validator.validate(params, {
+                invite_code: validator.isString,
+            });
+
+            if (errors) {
+                reject({
+                    type: 'validation',
+                    rejected_parameters: errors
+                });
+                return;
+            }
+
+            database.query({
+                text: "SELECT Team_ID FROM Teams WHERE Invite_Code = $1",
+                values: [params.invite_code]
+            }).then(results => {
+                if (results.length > 0) {
+                    database.query({
+                        text: "INSERT INTO Teams_Users(Team_ID, User_ID, Role_ID, Status) VALUES ($1, $2, 2, 1) returning Teams_Users_ID ",
+                        values: [results[0].Team_ID, user_id]
+                    }).then(results => resolve({
+                        message: "Successfully added team member"
+                    })).catch(error => reject(error));
+                } else {
+                    reject({
+                        error: "Invite code invalid"
+                    });
+                }
+            }).catch(error => reject(error));
         });
     }
 };
