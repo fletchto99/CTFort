@@ -4,7 +4,7 @@ const router = express.Router();
 router.post('/', (request, res) => {
     request.session.destroy((error) => {
         if (!error) {
-            res.json({
+            res.jsonResponse({
                 status: 'Success!'
             })
         } else {

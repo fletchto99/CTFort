@@ -16,4 +16,7 @@ router.use('/register', require('./session/register'));
  * Authenticated api endpoints
  */
 
+router.use('/auth/profile', require('./authenticated/profile'));
+router.use('/auth/teams', require('./authenticated/team'));
+
 module.exports = router;

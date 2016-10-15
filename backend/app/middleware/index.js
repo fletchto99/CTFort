@@ -14,6 +14,7 @@ sessionObj.store = new pgSession({
     tableName: 'session'
 });
 
+router.use(require('./response'));
 router.use(require('./error'));
 router.use(bodyParser.json());
 router.use(helmet());

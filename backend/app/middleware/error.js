@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
         if (!config.developer_mode) {
             delete error.dev_error;
         }
-        res.status(status).json(error);
+        res.jsonResponse(null, status, error);
     };
     next();
 };

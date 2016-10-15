@@ -4,12 +4,10 @@ const router = express.Router();
 
 router.put('/', (req, res) => {
     if (req.session.user) {
-        res.status(400).json({
-            error: 'You must be logged out before creating a new user!'
-        });
+        res.jsonError("You must be logged out before creating a new user!");
     } else {
         user.register(req.body)
-            .then(result => req.session.user = result && res.json(req.session.user))
+            .then(result => req.session.user = result && res.jsonResponse(req.session.user))
             .catch(error => res.jsonError(error, 400))
     }
 });
