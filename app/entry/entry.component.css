@@ -1,0 +1,7 @@
+tabs {
+    background-color: #a22;
+}
+
+tab a.active {
+    background-color: #911;
+}
