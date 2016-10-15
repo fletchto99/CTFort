@@ -1,13 +1,9 @@
 .idea
-/node_modules/
-/app/**/*.js
-/app/**/*.js.map
-/typings/
-/frontend/node_modules/
+node_modules/
+npm-debug.log
 /frontend/app/**/*.js
 /frontend/app/**/*.js.map
 /frontend/typings/
-backend/node_modules
 session.json
 database.json
 app.json
