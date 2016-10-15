@@ -16,8 +16,8 @@ database.connect(dbConfig, null).then(() => {
     app.use('/', require('./app/middleware'));
     app.use('/', require('./app/controllers'));
 
-    app.listen(appConfig.game_port, () => {
-        console.log("Game ready!")
+    app.listen(appConfig.app_port, () => {
+        console.log("CTFort Ready!")
     });
 }).catch((error) => {
     console.log(`Error connecting to database: ${error}`);
