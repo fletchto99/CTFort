@@ -11,8 +11,12 @@
 }
 
 .spacer {
-	margin: 25px;
-	margin-bottom: 0;
+	margin: 25px 25px 0 25px;
+}
+
+.paddingy {
+	padding-bottom: 50px;
+	padding-top: 25px;
 }
 
 .text {
