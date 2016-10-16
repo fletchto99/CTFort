@@ -21,7 +21,7 @@
 }
 
 .parallax-container {
-	height: 550px;
+	height: 650px;
 }
 
 #bg {
@@ -31,6 +31,7 @@
 }
 
 #search {
+	margin: 20px 0;
 	padding: 20px;
 	background: rgb(34,34,34); /* for IE */
 	background: rgba(34,34,34,0.75);
