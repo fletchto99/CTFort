@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class AuthService {
     private options = new RequestOptions({ headers: new Headers({'Content-Type': 'application/json'}) });
-    private baseUrl = 'https://ctfort.com';
+    private baseUrl = 'https://api.ctfort.com';
 
     constructor(private http: Http) { }
 
@@ -27,7 +27,7 @@ export class AuthService {
 
     register(username: string, email: string, password: string): Promise<void> {
         const body = JSON.stringify({username, email, password});
-        return this.http.post(`${this.baseUrl}/register`, body, this.options)
+        return this.http.put(`${this.baseUrl}/register`, body, this.options)
             .toPromise()
             .then(() => null)
             .catch(this.handleError);
