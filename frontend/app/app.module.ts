@@ -7,6 +7,7 @@ import { LandingComponent } from './landing/landing.component';
 import { EntryComponent } from './entry/entry.component';
 import { LoginComponent } from './entry/login.component';
 import { RegisterComponent } from './entry/register.component';
+import { TeamComponent } from './teams/team.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
         LandingComponent,
         EntryComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        TeamComponent
     ],
     bootstrap: [ AppComponent ]
 })
