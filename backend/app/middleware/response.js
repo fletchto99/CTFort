@@ -1,3 +1,5 @@
+const config = require('../../config/app.json');
+
 module.exports = (req, res, next) => {
     res.jsonResponse = (data, status, error) => {
         status = status || 200;
@@ -5,7 +7,7 @@ module.exports = (req, res, next) => {
             delete error.dev_error;
         }
         res.status(status).json({
-            data: data,
+            data: data || null,
             error: error || null
         });
     };

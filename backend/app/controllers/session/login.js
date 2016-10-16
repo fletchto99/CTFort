@@ -2,13 +2,15 @@ const express = require('express');
 const user = require('../../models/user');
 const router = express.Router();
 
-router.post('/', (req, res) => {
-    if (req.session.user != null) {
-        res.json(req.session.user);
+router.post('', (request, response) => {
+    if (request.session.user != null) {
+        response.jsonResponse(request.session.user);
     } else {
-        user.authenticate(req.body)
-            .then((result) => req.session.user = result && res.jsonResponse(req.session.user))
-            .catch(error => res.jsonError(error, 400));
+        user.authenticate(request.body)
+            .then(result => {
+                request.session.user = result;
+                response.jsonResponse(request.session.user);
+            }).catch(error => response.jsonError(error, 400));
     }
 
 });

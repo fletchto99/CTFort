@@ -24,13 +24,21 @@ module.exports = {
             database.query({
                 text: "SELECT COUNT(*) as count FROM Users WHERE username = $1",
                 values: [params.username]
-            }).then(() => database.query({
-                text: 'INSERT INTO Users(Username, Password, Email) VALUES ($1, $2, $3)',
-                values: [params.username, security.hashPassword(params.password), params.email]
-            })).then((results) => resolve({
+            }).then((result) =>  {
+                if (result[0].count > 0) {
+                    reject({
+                        error: "Username already taken."
+                    });
+                    return;
+                }
+                return database.query({
+                    text: 'INSERT INTO Users(Username, Password, Email) VALUES ($1, $2, $3)',
+                    values: [params.username, security.hashPassword(params.password), params.email]
+                })
+            }).then(results => resolve({
                 username: params.username,
                 email: params.email
-            })).catch((error) => reject({
+            })).catch(error => reject({
                 error: 'An unexpected error has occurred! Please try again later.',
                 dev_error: error
             }));
