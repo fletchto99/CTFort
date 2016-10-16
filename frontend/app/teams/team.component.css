@@ -1,3 +1,7 @@
 .hoverimg {
-	cursor: pointer;
+    cursor: pointer;
+}
+
+#logout {
+    width: 100%;
 }
