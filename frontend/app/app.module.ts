@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
@@ -10,11 +13,13 @@ import { RegisterComponent } from './entry/register.component';
 import { TeamComponent } from './teams/team.component';
 import { ModuleComponent } from './teams/module.component';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './entry/auth.service';
 
 @NgModule({
     imports: [
         BrowserModule,
+        FormsModule,
+        HttpModule,
         AppRoutingModule
     ],
     declarations: [
@@ -26,7 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
         TeamComponent,
         ModuleComponent
     ],
-    bootstrap: [ AppComponent ]
+    bootstrap: [ AppComponent ],
+    providers: [ AuthService ]
 })
 
 export class AppModule { }

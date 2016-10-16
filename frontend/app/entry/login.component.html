@@ -1,9 +1,11 @@
-<div class="input-field col s12">
-    <input id="username" type="text" class="validate">
-    <label for="username">Username</label>
-</div>
-<div class="input-field col s12">
-    <input id="password" type="password" class="validate">
-    <label for="password">Password</label>
-</div>
-<button class="btn col s12 waves-effect waves-light">Login</button>
+<form (ngSubmit)="login()">
+    <div class="input-field col s12">
+        <input type="text" id="username" class="validate" [(ngModel)]="username" name="username" required>
+        <label for="username">Username</label>
+    </div>
+    <div class="input-field col s12">
+        <input type="password" id="password" class="validate" [(ngModel)]="password" name="password" required>
+        <label for="password">Password</label>
+    </div>
+    <input type="submit" class="btn col s12 waves-effect waves-light" value="Login">
+</form>
