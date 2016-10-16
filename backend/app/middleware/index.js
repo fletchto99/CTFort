@@ -7,6 +7,7 @@ const router = express.Router();
 const databaseConfig = require('../../config/database.json');
 const sessionObj = require('../../config/session.json');
 const helmet = require('helmet');
+const cors = require('cors');
 
 sessionObj.store = new pgSession({
     pg: pg,
@@ -14,6 +15,9 @@ sessionObj.store = new pgSession({
     tableName: 'session'
 });
 
+router.use(cors());
+router.options('*', cors());
+router.use(require('./cors'));
 router.use(require('./response'));
 router.use(require('./error'));
 router.use(bodyParser.json());
