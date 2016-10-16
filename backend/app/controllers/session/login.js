@@ -7,10 +7,8 @@ router.post('', (request, response) => {
         response.jsonResponse(request.session.user);
     } else {
         user.authenticate(request.body)
-            .then(result => {
-                request.session.user = result;
-                response.jsonResponse(request.session.user);
-            }).catch(error => response.jsonError(error, 400));
+            .then(result => request.session.user = result && response.jsonResponse(request.session.user))
+            .catch(error => response.jsonError(error, 400));
     }
 
 });
