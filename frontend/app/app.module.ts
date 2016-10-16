@@ -8,6 +8,7 @@ import { EntryComponent } from './entry/entry.component';
 import { LoginComponent } from './entry/login.component';
 import { RegisterComponent } from './entry/register.component';
 import { TeamComponent } from './teams/team.component';
+import { ModuleComponent } from './teams/module.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,7 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
         EntryComponent,
         LoginComponent,
         RegisterComponent,
-        TeamComponent
+        TeamComponent,
+        ModuleComponent
     ],
     bootstrap: [ AppComponent ]
 })

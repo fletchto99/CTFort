@@ -6,6 +6,7 @@ import { EntryComponent } from './entry/entry.component';
 import { LoginComponent } from './entry/login.component';
 import { RegisterComponent } from './entry/register.component';
 import { TeamComponent } from './teams/team.component';
+import { ModuleComponent } from './teams/module.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
         { path: 'login', component: LoginComponent },
         { path: 'register', component: RegisterComponent }
     ]},
-    { path: 'team', component: TeamComponent }
+    { path: 'teams', component: TeamComponent },
+    { path: 'modules', component: ModuleComponent }
 ];
 
 @NgModule({
