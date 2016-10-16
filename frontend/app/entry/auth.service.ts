@@ -34,7 +34,11 @@ export class AuthService {
     }
 
     private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error);
+        const body = error.json();
+        if (body.error && body.error.error) {
+            Materialize.toast(body.error.error, 4000);
+        }
+
         return Promise.reject(error.message || error);
     }
 }
