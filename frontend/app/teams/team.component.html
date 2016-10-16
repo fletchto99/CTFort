@@ -2,7 +2,7 @@
 	<nav>
     <div class="nav-wrapper">
 		<div class="col s12">
-			<a href="#!" class="breadcrumb">Home</a>
+			<a routerLink="/landing" routerLinkActive="active" class="breadcrumb">Home</a>
 			<a class="breadcrumb">Teams</a>
 		</div>
 	</div>
@@ -12,7 +12,7 @@
 		<div class="col s12 m2">
 			<div class="card min">
 				<div class="card-image">
-					<a routerLink="/"><img src="resources/binary_logo.png"></a>
+					<a routerLink="/modules" routerLinkActive="active"><img src="resources/binary_logo.png"></a>
 				</div>
 				<div class="card-content">
 					<span class="card-title">Team 10</span>
@@ -24,7 +24,7 @@
 		<div class="col s12 m2">
 			<div class="card min">
 				<div class="card-image">
-					<a routerLink="/"><img src="resources/arrow_symbol.png"></a>
+					<img class="hoverimg modal-trigger" data-target="join-modal" src="resources/arrow_symbol.png">
 				</div>
 				<div class="card-content">
 					<span class="card-title">Join a Team</span>
@@ -35,12 +35,43 @@
 		<div class="col s12 m2">
 			<div class="card min">
 				<div class="card-image">
-					<a routerLink="/"><img src="resources/plus_symbol.png"></a>
+					<img class="hoverimg modal-trigger" data-target="create-modal" src="resources/plus_symbol.png">
 				</div>
 				<div class="card-content">
 					<span class="card-title">Create a New Team</span>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+
+
+<!-- Modal Structure -->
+<div id="join-modal" class="modal modal-content">
+	<div class="modal-content">
+		<h4>Join a Team</h4>
+			<div class="input-field col s12">
+			<input id="teamname" type="text" class="validate">
+			<label for="teamname">Invitation Code</label>
+		</div>
+		<button class="btn col s12 waves-effect waves-light">Join</button>
+	</div>
+	<div class="modal-footer">
+		<a class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+	</div>
+</div>
+
+<!-- Modal Structure -->
+<div id="create-modal" class="modal modal-content">
+	<div class="modal-content">
+		<h4>Create a Team</h4>
+			<div class="input-field col s12">
+			<input id="teamname" type="text" class="validate">
+			<label for="teamname">Team Name</label>
+		</div>
+		<button class="btn col s12 waves-effect waves-light">Create Team</button>
+	</div>
+	<div class="modal-footer">
+		<a class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
 	</div>
 </div>

@@ -2,8 +2,8 @@
 	<nav>
     <div class="nav-wrapper">
 		<div class="col s12">
-			<a href="#!" class="breadcrumb">Home</a>
-			<a routerLink="/teams/team" routerLinkActive="active" class="breadcrumb">Teams</a>
+			<a routerLink="/landing" routerLinkActive="active" class="breadcrumb">Home</a>
+			<a routerLink="/teams" routerLinkActive="active" class="breadcrumb">Teams</a>
 			<a class="breadcrumb">Modules</a>
 		</div>
 	</div>
@@ -13,7 +13,7 @@
 		<div class="col s12 m2">
 			<div class="card min">
 				<div class="card-image">
-					<a routerLink="/"><img src="resources/binary_logo.png"></a>
+					<a class="hoverimg modal-trigger" data-target="module-modal"><img src="resources/house_logo.png"></a>
 				</div>
 				<div class="card-content">
 					<span class="card-title">Module X</span>
@@ -21,5 +21,17 @@
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+
+
+<!-- Modal Structure -->
+<div id="module-modal" class="modal modal-content">
+	<div class="modal-content">
+		<h4>Module X</h4>
+		<p>Module description.</p>
+	</div>
+	<div class="modal-footer">
+		<a class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
 	</div>
 </div>
